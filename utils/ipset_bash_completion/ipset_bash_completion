@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # -----------------------------------------------------------------
 # Programmable completion code for ipset (netfilter.org)
@@ -46,6 +46,8 @@
 # Version 2.0
 #
 # -----------------------------------------------------------------
+
+shopt -s extglob
 
 # -----------------------------------------------------------------
 # Functions
@@ -537,7 +539,6 @@ done < "${_IPSET_IPLIST_FILE}"
 # -----------------------------------------------------------------
 
 _ipset_complete() {
-shopt -s extglob
 local cur prev cword words ips_version
 local str_action str_setname str_type str_filename
 local str_glob str_regex str_prefix str_suffix
